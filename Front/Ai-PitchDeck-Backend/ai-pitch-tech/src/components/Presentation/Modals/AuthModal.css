@@ -1,0 +1,389 @@
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.auth-modal {
+  width: 1000px;
+  max-height: 90vh;
+  background: #fffff5;
+  border-radius: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-modal-close:hover {
+  background: #f0f0f0;
+}
+
+.auth-modal-title {
+  font-family: "Lateef", serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 72px;
+  text-align: center;
+  background: conic-gradient(
+    from 98.23deg at 51.97% 50%,
+    #a07a00 -0.73deg,
+    #416444 228.45deg,
+    #495649 307.29deg,
+    #a07a00 359.27deg,
+    #416444 588.45deg
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+}
+
+.auth-modal-divider {
+  width: 100%;
+  height: 2px;
+  background: #416444;
+  margin-bottom: 30px;
+}
+
+.auth-modal-subtitle {
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.auth-modal-subtitle-large {
+  font-family: "Lateef", serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 54px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.auth-modal-description {
+  font-family: "Lateef", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 40px;
+}
+
+.auth-tabs {
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 12px 24px;
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-tab:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.auth-tab:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+.auth-tab.active {
+  background: #343e34;
+  color: #ffffff;
+}
+
+.auth-tab:not(.active) {
+  background: #fffff5;
+  color: #000000;
+}
+
+.auth-form {
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #343e34;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  height: 63px;
+  padding: 12px 27px;
+  border: 2px solid #aab99a;
+  border-radius: 15px;
+  font-family: "Lateef", serif;
+  font-size: 24px;
+  line-height: 35px;
+  color: #000000;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  color: #999999;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #517152;
+}
+
+.forgot-password {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  background: transparent;
+  border: none;
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #ff0000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+  opacity: 0.8;
+}
+
+.resend-section {
+  margin-bottom: 30px;
+  text-align: left;
+  font-family: "Lateef", serif;
+  font-size: 28px;
+  color: #000000;
+}
+
+.resend-link {
+  background: transparent;
+  border: none;
+  color: #ff0000;
+  font-family: "Lateef", serif;
+  font-size: 28px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.resend-link:hover {
+  opacity: 0.8;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  height: 62px;
+  background: #343e34;
+  border: none;
+  border-radius: 20px;
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auth-submit-btn:hover {
+  background: #2a332a;
+}
+
+.auth-divider-text {
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin: 40px 0;
+}
+
+.google-auth-btn {
+  width: 100%;
+  height: 66px;
+  background: #ffffff;
+  border: 2px solid #aab99a;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Lateef", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.google-auth-btn:hover {
+  background: #f8f8f8;
+}
+
+.google-icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.google-icon-blue {
+  position: absolute;
+  left: 50%;
+  right: 6%;
+  top: 41.67%;
+  bottom: 15.25%;
+  background: #4285f4;
+}
+
+.google-icon-green {
+  position: absolute;
+  left: 9.08%;
+  right: 19.67%;
+  top: 58.75%;
+  bottom: 4.17%;
+  background: #34a853;
+}
+
+.google-icon-yellow {
+  position: absolute;
+  left: 4.17%;
+  right: 75.67%;
+  top: 29.45%;
+  bottom: 29.46%;
+  background: #fbbc05;
+}
+
+.google-icon-red {
+  position: absolute;
+  left: 9.08%;
+  right: 19.33%;
+  top: 4.17%;
+  bottom: 58.71%;
+  background: #ea4335;
+}
+
+@media (max-width: 1200px) {
+  .auth-modal {
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+  }
+
+  .auth-modal-title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .auth-modal-subtitle {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .auth-modal-subtitle-large {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .auth-modal-description {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .auth-tab {
+    font-size: 24px;
+    padding: 10px 20px;
+  }
+
+  .form-group label {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    height: 50px;
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .auth-submit-btn {
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .google-auth-btn {
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .forgot-password {
+    font-size: 24px;
+  }
+
+  .auth-divider-text {
+    font-size: 24px;
+  }
+
+  .resend-section {
+    font-size: 22px;
+  }
+
+  .resend-link {
+    font-size: 22px;
+  }
+}

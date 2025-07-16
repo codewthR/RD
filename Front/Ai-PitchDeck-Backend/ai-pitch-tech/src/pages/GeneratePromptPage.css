@@ -1,0 +1,20 @@
+.generate-prompt-page-container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.back-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.prompt-section, .settings-section {
+  margin-top: 20px;
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+}

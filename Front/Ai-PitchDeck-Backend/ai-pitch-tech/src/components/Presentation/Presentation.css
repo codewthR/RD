@@ -1,0 +1,730 @@
+.presentation-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.presentation-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(233, 236, 239, 0.5);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-dots {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.menu-dots:hover {
+  color: #495057;
+  transform: scale(1.1);
+}
+
+.download-button-container {
+  position: relative;
+}
+
+.download-btn,
+.login-btn,
+.prompt-editor-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover,
+.login-btn:hover,
+.prompt-editor-btn:hover {
+  background: #f8f9fa;
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Enhanced PPT Download Button */
+.ppt-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.ppt-download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.ppt-download-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.ppt-download-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.ppt-download-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ppt-download-btn.downloading {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+.download-icon {
+  font-size: 1.1rem;
+}
+
+.download-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.presentation-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.presentation-slides {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.presentation-slide {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  min-height: 500px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.presentation-slide:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(-4px);
+}
+
+.slide-card {
+  padding: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-card.enhanced {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+}
+
+.slide-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slide-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  z-index: 1;
+}
+
+.title-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.title-card h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.title-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 2;
+}
+
+.title-card p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-content-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-text {
+  flex: 1;
+}
+
+.slide-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2c3e50 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.slide-main-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #667eea;
+}
+
+.slide-paragraph {
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+.slide-bullet-point {
+  margin-bottom: 0.8rem;
+  list-style: none;
+  position: relative;
+  padding-left: 2rem;
+  color: #495057;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.slide-bullet-point:hover {
+  color: #2c3e50;
+  transform: translateX(5px);
+}
+
+.slide-bullet-point.enhanced .bullet-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+  color: #667eea;
+}
+
+.slide-bullet-point.standard .bullet-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.bullet-text {
+  font-weight: 500;
+}
+
+.slide-image-container {
+  flex: 0 0 350px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.slide-image.real-image {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.slide-image.generated-image {
+  box-shadow: 0 6px 24px rgba(102, 126, 234, 0.3);
+}
+
+.slide-image img {
+  transition: all 0.4s ease;
+}
+
+.slide-image img:hover {
+  transform: scale(1.05);
+}
+
+.slide-decoration {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 16px;
+  border: 3px dashed #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.slide-decoration.enhanced {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.slide-decoration:hover {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+}
+
+.decoration-shape {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 16px;
+  opacity: 0.3;
+  transform: rotate(45deg);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.decoration-shape.animated {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.1);
+  }
+}
+
+.decoration-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0.15;
+}
+
+.decoration-circle.pulse {
+  animation: pulse-circle 3s ease-in-out infinite;
+}
+
+@keyframes pulse-circle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.25;
+  }
+}
+
+.decoration-line {
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0.3;
+  margin-left: 20px;
+}
+
+.decoration-line.animate {
+  animation: grow 2s ease-in-out infinite;
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    height: 100px;
+  }
+  50% {
+    height: 120px;
+  }
+}
+
+.image-placeholder-text {
+  text-align: center;
+  color: #6c757d;
+  margin-top: 1rem;
+}
+
+.placeholder-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.image-placeholder-text p {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.intro-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.content-card {
+  background: white;
+}
+
+.conclusion-card {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.feedback-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-section.enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
+  z-index: 0;
+}
+
+.feedback-content {
+  position: relative;
+  z-index: 1;
+}
+
+.feedback-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2c3e50 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.action-btn:hover::before {
+  left: 100%;
+}
+
+.create-new {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.back-prompt {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.help-text {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.satisfaction-title {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.satisfaction-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.satisfaction-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.satisfaction-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.satisfaction-btn:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.satisfaction-btn:hover {
+  transform: scale(1.3) rotate(10deg);
+}
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .presentation-content {
+    padding: 1rem;
+  }
+
+  .slide-card {
+    padding: 2rem;
+  }
+
+  .slide-content-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .slide-image-container {
+    flex: none;
+    width: 100%;
+    height: 250px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-card h1 {
+    font-size: 2.5rem;
+  }
+
+  .slide-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .ppt-download-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .satisfaction-buttons {
+    gap: 1rem;
+  }
+
+  .satisfaction-btn {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,362 @@
+.prompt-input-container {
+  padding: 40px 80px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.loading-spinner {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+.deck-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+  min-width: 120px;
+}
+
+.custom-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-dropdown:disabled {
+  cursor: not-allowed;
+}
+
+.dropdown-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  background: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-display:hover {
+  border-color: #b8b343;
+}
+
+.dropdown-text {
+  color: #000;
+}
+
+.dropdown-arrow {
+  color: #666;
+  font-size: 12px;
+}
+
+.prompt-box {
+  background: rgba(255, 255, 255, 1);
+  border: 3px solid #b8b343;
+  box-shadow: 0px 0px 10px 0px rgba(250, 226, 151, 1);
+  border-radius: 30px;
+  padding: 05px;
+}
+
+.prompt-textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  resize: vertical;
+  outline: none;
+  color: #000;
+  padding-top: 10px;
+}
+
+.prompt-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.prompt-textarea::placeholder {
+  color: #666;
+}
+
+.attachments-list {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+.remove-attachment {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transition: background-color 0.2s;
+}
+
+.remove-attachment:hover:not(:disabled) {
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+.remove-attachment:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.upload-progress {
+  margin: 15px 0;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.prompt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.prompt-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.attachment-dropdown {
+  position: relative;
+}
+
+.icon {
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover:not(.disabled) {
+  color: #b8b343;
+}
+
+.icon.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.attachment-options {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 120px;
+  margin-bottom: 5px;
+}
+
+.attachment-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.attachment-option:hover {
+  background-color: #f5f5f5;
+}
+
+.attachment-option:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.attachment-option:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.smart-prompt-btn {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.smart-prompt-btn:hover:not(.disabled) {
+  background: white;
+  border-color: #b8b343;
+}
+
+.smart-prompt-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-btn:hover:not(.disabled) {
+  background: #2a4a6b;
+  transform: translateY(-2px);
+}
+
+.generate-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.navigate-generateprompt-btn {
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.navigate-generateprompt-btn:hover:not(:disabled) {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.navigate-generateprompt-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.question-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .prompt-input-container {
+    padding: 20px;
+  }
+
+  .deck-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dropdown-wrapper {
+    min-width: 100%;
+  }
+
+  .prompt-footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .prompt-icons {
+    justify-content: center;
+  }
+}

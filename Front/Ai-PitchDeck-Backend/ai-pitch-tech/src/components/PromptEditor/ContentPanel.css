@@ -1,0 +1,78 @@
+.content-panel {
+  padding: 1rem;
+}
+
+.slide-card {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  border-left: 50px solid #ccc;
+}
+
+.slide-card.green {
+  border-left-color: #b8e6c6;
+}
+
+.slide-card.yellow {
+  border-left-color: #fbe6a2;
+}
+
+.slide-number {
+  background-color: #dfdfdf;
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  border: 2px solid #dbdbdb;
+}
+
+.slide-content {
+  flex: 1;
+}
+
+.slide-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.slide-body p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.slide-body ul,
+.slide-body ol {
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.slide-body li {
+  margin-bottom: 0.5rem;
+}
+
+.delete-slide-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  color: #c00;
+  font-size: 1rem;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+

@@ -1,0 +1,16 @@
+.prompt-editor-page {
+  min-height: 200vh;
+  background-image: url("/new_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .prompt-editor-page {
+    padding: 10px;
+    background-attachment: scroll;
+  }
+}
